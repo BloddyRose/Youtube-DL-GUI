@@ -187,7 +187,7 @@ namespace Youtube_DL_GUI
             this.Controls.Add(this.youtubedlBtn);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Youtube-DL GUI";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

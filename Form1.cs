@@ -44,7 +44,7 @@ namespace Youtube_DL_GUI
         private void Client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             progressBar.Value = e.ProgressPercentage;
-            progressLbl.Text = e.ProgressPercentage.ToString();
+            progressLbl.Text = e.ProgressPercentage.ToString() + "%";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -98,7 +98,8 @@ namespace Youtube_DL_GUI
         private void Downloader_FinishedDownload(object sender, DownloadEventArgs e)
         {
             MessageBox.Show("Download Finished!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            progressBar.Value = 0;
+            progressLbl.Text = "0 %";
         }
 
         private void Downloader_ProgressDownload(object sender, ProgressEventArgs e)
