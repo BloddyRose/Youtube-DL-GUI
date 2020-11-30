@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
@@ -120,6 +121,7 @@ namespace Youtube_DL_GUI
             Invoke(new MethodInvoker(delegate
               {
                   txtfilenameBox.Text = downloader.OutputName;
+
               }
             ));
             downloader.ProgressDownload += Downloader_ProgressDownload;
@@ -136,7 +138,7 @@ namespace Youtube_DL_GUI
 
         private void githublinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Process.Start("https://github.com/BloddyRose/Youtube-DL-GUI");
         }
     }
 }
