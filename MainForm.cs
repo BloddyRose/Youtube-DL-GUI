@@ -10,14 +10,14 @@ using Microsoft.WindowsAPICodePack.Taskbar;
 
 namespace Youtube_DL_GUI
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private readonly Uri youube_dl_url = new Uri("https://yt-dl.org/downloads/2020.11.29/youtube-dl.exe");
         private string folder;
         private string filename;
         // public static readonly TaskbarManager taskbar;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             

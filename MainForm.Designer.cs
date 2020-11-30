@@ -1,7 +1,7 @@
 ﻿
 namespace Youtube_DL_GUI
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Youtube_DL_GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.youtubedlBtn = new System.Windows.Forms.Button();
             this.folderselBtn = new System.Windows.Forms.Button();
             this.txturlBox = new System.Windows.Forms.TextBox();
