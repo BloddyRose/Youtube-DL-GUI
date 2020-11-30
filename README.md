@@ -1,5 +1,5 @@
 ﻿## Youtube-dl GUI With C Sharp
-	- Based on wrapper from https://github.com/detaybey/WrapYoutubeDl
+	- Based on wrapper from [WrapYoutubeDl] (https://github.com/detaybey/WrapYoutubeDl)
 	- Download audio from youtube
 	- Based on youtube-dl.exe
 	- Integrated youtube-dl downloader
