@@ -5,6 +5,8 @@ using System.IO;
 using System.Net;
 using System.Windows.Forms;
 using WrapYoutubeDl;
+using Microsoft.WindowsAPICodePack.Taskbar;
+
 
 namespace Youtube_DL_GUI
 {
@@ -13,6 +15,8 @@ namespace Youtube_DL_GUI
         private readonly Uri youube_dl_url = new Uri("https://yt-dl.org/downloads/2020.11.29/youtube-dl.exe");
         private string folder;
         private string filename;
+        // public static readonly TaskbarManager taskbar;
+
         public Form1()
         {
             InitializeComponent();
@@ -42,12 +46,16 @@ namespace Youtube_DL_GUI
             getlinkBtn.Enabled = true;
             progressBar.Value = 0;
             progressLbl.Text = "0 %";
+            TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.NoProgress, Handle);
+            TaskbarManager.Instance.SetProgressValue(0, 100, Handle);
         }
 
         private void Client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             progressBar.Value = e.ProgressPercentage;
             progressLbl.Text = e.ProgressPercentage.ToString() + "%";
+            TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal, Handle);
+            TaskbarManager.Instance.SetProgressValue(e.ProgressPercentage, 100, Handle);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -93,7 +101,6 @@ namespace Youtube_DL_GUI
             }
             else
             {
-                filename = txtfilenameBox.Text + ".mp3";
                 backgroundWorker.RunWorkerAsync();
             }
         }
@@ -103,6 +110,8 @@ namespace Youtube_DL_GUI
             MessageBox.Show("Download Finished!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             progressBar.Value = 0;
             progressLbl.Text = "0 %";
+            TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.NoProgress, Handle);
+            TaskbarManager.Instance.SetProgressValue(0, 100, Handle);
         }
 
         private void Downloader_ProgressDownload(object sender, ProgressEventArgs e)
@@ -112,6 +121,8 @@ namespace Youtube_DL_GUI
                 {
                     progressBar.Value = (int)e.Percentage;
                     progressLbl.Text = $"{e.Percentage.ToString("0.00")} %";
+                    TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal, Handle);
+                    TaskbarManager.Instance.SetProgressValue((int)e.Percentage, 100, Handle);
                 }
               ));
 
@@ -136,11 +147,34 @@ namespace Youtube_DL_GUI
         private void Downloader_ErrorDownload(object sender, ProgressEventArgs e)
         {
             MessageBox.Show("Download Error!" + e.Error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Error, Handle);
+            TaskbarManager.Instance.SetProgressValue(0, 100, Handle);
         }
 
         private void githublinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/BloddyRose/Youtube-DL-GUI");
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Dispose();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txtfilenameBox.Enabled = false;
+                filename = Guid.NewGuid().ToString();
+                txtfilenameBox.Text = filename;
+            }
+            else if (!checkBox1.Checked)
+            {
+                txtfilenameBox.Enabled = true;
+                txtfilenameBox.Clear();
+                filename = txtfilenameBox.Text + ".mp3";
+            }
         }
     }
 }

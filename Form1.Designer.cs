@@ -30,6 +30,7 @@ namespace Youtube_DL_GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.youtubedlBtn = new System.Windows.Forms.Button();
             this.folderselBtn = new System.Windows.Forms.Button();
             this.txturlBox = new System.Windows.Forms.TextBox();
@@ -45,39 +46,47 @@ namespace Youtube_DL_GUI
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtfilenameBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // youtubedlBtn
             // 
-            this.youtubedlBtn.ForeColor = System.Drawing.Color.White;
-            this.youtubedlBtn.Location = new System.Drawing.Point(10, 176);
+            this.youtubedlBtn.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.youtubedlBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.youtubedlBtn.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.youtubedlBtn.Location = new System.Drawing.Point(10, 181);
             this.youtubedlBtn.Name = "youtubedlBtn";
             this.youtubedlBtn.Size = new System.Drawing.Size(139, 23);
             this.youtubedlBtn.TabIndex = 0;
             this.youtubedlBtn.Text = "Download Youtube-dl";
             this.toolTip1.SetToolTip(this.youtubedlBtn, "Download the youtube-dl form official website!\r\nIf you can\'t click on the GET but" +
         "ton, is disable beacause the youtube-dl.exe is missing!");
-            this.youtubedlBtn.UseVisualStyleBackColor = true;
+            this.youtubedlBtn.UseVisualStyleBackColor = false;
             this.youtubedlBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // folderselBtn
             // 
-            this.folderselBtn.ForeColor = System.Drawing.Color.White;
-            this.folderselBtn.Location = new System.Drawing.Point(429, 149);
+            this.folderselBtn.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.folderselBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.folderselBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.folderselBtn.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.folderselBtn.Location = new System.Drawing.Point(395, 149);
             this.folderselBtn.Name = "folderselBtn";
-            this.folderselBtn.Size = new System.Drawing.Size(36, 20);
+            this.folderselBtn.Size = new System.Drawing.Size(75, 21);
             this.folderselBtn.TabIndex = 1;
-            this.folderselBtn.Text = "...";
+            this.folderselBtn.Text = "Select";
+            this.folderselBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.toolTip1.SetToolTip(this.folderselBtn, "Option to select where to save your files!");
-            this.folderselBtn.UseVisualStyleBackColor = true;
+            this.folderselBtn.UseVisualStyleBackColor = false;
             this.folderselBtn.Click += new System.EventHandler(this.folderselBtn_Click);
             // 
             // txturlBox
             // 
-            this.txturlBox.ForeColor = System.Drawing.Color.White;
-            this.txturlBox.Location = new System.Drawing.Point(12, 29);
+            this.txturlBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txturlBox.ForeColor = System.Drawing.Color.Gray;
+            this.txturlBox.Location = new System.Drawing.Point(10, 29);
             this.txturlBox.Name = "txturlBox";
-            this.txturlBox.Size = new System.Drawing.Size(377, 20);
+            this.txturlBox.Size = new System.Drawing.Size(379, 20);
             this.txturlBox.TabIndex = 2;
             // 
             // label1
@@ -91,7 +100,10 @@ namespace Youtube_DL_GUI
             // 
             // getlinkBtn
             // 
-            this.getlinkBtn.ForeColor = System.Drawing.Color.White;
+            this.getlinkBtn.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.getlinkBtn.FlatAppearance.BorderSize = 0;
+            this.getlinkBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.getlinkBtn.ForeColor = System.Drawing.SystemColors.WindowText;
             this.getlinkBtn.Location = new System.Drawing.Point(395, 29);
             this.getlinkBtn.Name = "getlinkBtn";
             this.getlinkBtn.Size = new System.Drawing.Size(75, 20);
@@ -99,21 +111,23 @@ namespace Youtube_DL_GUI
             this.getlinkBtn.Text = "GET";
             this.toolTip1.SetToolTip(this.getlinkBtn, "If you can\'t click on the button is disable beacause the youtube-dl.exe is missin" +
         "g!");
-            this.getlinkBtn.UseVisualStyleBackColor = true;
+            this.getlinkBtn.UseVisualStyleBackColor = false;
             this.getlinkBtn.Click += new System.EventHandler(this.getlinkBtn_Click);
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(10, 61);
+            this.progressBar.BackColor = System.Drawing.Color.Black;
+            this.progressBar.ForeColor = System.Drawing.Color.LightCoral;
+            this.progressBar.Location = new System.Drawing.Point(10, 55);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(410, 23);
+            this.progressBar.Size = new System.Drawing.Size(379, 23);
             this.progressBar.TabIndex = 5;
             // 
             // progressLbl
             // 
             this.progressLbl.AutoSize = true;
             this.progressLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progressLbl.Location = new System.Drawing.Point(426, 64);
+            this.progressLbl.Location = new System.Drawing.Point(395, 63);
             this.progressLbl.Name = "progressLbl";
             this.progressLbl.Size = new System.Drawing.Size(31, 15);
             this.progressLbl.TabIndex = 6;
@@ -125,10 +139,12 @@ namespace Youtube_DL_GUI
             // 
             // txtfolderBox
             // 
+            this.txtfolderBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtfolderBox.ForeColor = System.Drawing.Color.Gray;
             this.txtfolderBox.Location = new System.Drawing.Point(10, 150);
             this.txtfolderBox.Name = "txtfolderBox";
             this.txtfolderBox.ReadOnly = true;
-            this.txtfolderBox.Size = new System.Drawing.Size(410, 20);
+            this.txtfolderBox.Size = new System.Drawing.Size(379, 20);
             this.txtfolderBox.TabIndex = 7;
             // 
             // label2
@@ -143,7 +159,7 @@ namespace Youtube_DL_GUI
             // githublinkLbl
             // 
             this.githublinkLbl.AutoSize = true;
-            this.githublinkLbl.Location = new System.Drawing.Point(339, 181);
+            this.githublinkLbl.Location = new System.Drawing.Point(339, 191);
             this.githublinkLbl.Name = "githublinkLbl";
             this.githublinkLbl.Size = new System.Drawing.Size(131, 13);
             this.githublinkLbl.TabIndex = 9;
@@ -153,9 +169,10 @@ namespace Youtube_DL_GUI
             // 
             // txtfilenameBox
             // 
+            this.txtfilenameBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtfilenameBox.Location = new System.Drawing.Point(10, 103);
             this.txtfilenameBox.Name = "txtfilenameBox";
-            this.txtfilenameBox.Size = new System.Drawing.Size(410, 20);
+            this.txtfilenameBox.Size = new System.Drawing.Size(379, 20);
             this.txtfilenameBox.TabIndex = 10;
             // 
             // label3
@@ -167,12 +184,26 @@ namespace Youtube_DL_GUI
             this.label3.TabIndex = 11;
             this.label3.Text = "Name of your song ";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(398, 105);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(86, 17);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Guid-Naming";
+            this.toolTip1.SetToolTip(this.checkBox1, "If this is checked will generated an guid number for every file\r\nSomething like t" +
+        "his : f5e97257-a569-441c-b869-193e4be2eb06");
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(482, 211);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtfilenameBox);
             this.Controls.Add(this.githublinkLbl);
@@ -185,9 +216,11 @@ namespace Youtube_DL_GUI
             this.Controls.Add(this.txturlBox);
             this.Controls.Add(this.folderselBtn);
             this.Controls.Add(this.youtubedlBtn);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.SystemColors.Menu;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Youtube-DL GUI";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,6 +244,7 @@ namespace Youtube_DL_GUI
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox txtfilenameBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
