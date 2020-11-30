@@ -16,12 +16,14 @@ namespace Youtube_DL_GUI
         public Form1()
         {
             InitializeComponent();
+            
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
-            {
+            { 
                 using (WebClient client = new WebClient())
                 {
                     client.DownloadProgressChanged += Client_DownloadProgressChanged;
