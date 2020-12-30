@@ -9,3 +9,7 @@ Based on wrapper from https://github.com/detaybey/WrapYoutubeDl.git
 	- Taskbar progress
 
 #### Includes installer in Releases tab
+### Donate
+	- It will help me much a donation to keep app with stable updates
+
+	[PayPal](https://www.paypal.com/donate?hosted_button_id=PSNGWDTK6FHME)

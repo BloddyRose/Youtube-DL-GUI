@@ -193,5 +193,12 @@ namespace Youtube_DL_GUI
             Settings settings = new Settings();
             settings.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string url = "https://www.paypal.com/donate?hosted_button_id=PSNGWDTK6FHME";
+
+            System.Diagnostics.Process.Start(url);
+        }
     }
 }
