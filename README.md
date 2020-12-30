@@ -2,11 +2,20 @@
 ********************************************************************
 Based on wrapper from https://github.com/detaybey/WrapYoutubeDl.git
 ********************************************************************
+### Features
+
 	- Download audio from youtube
 	- Based on youtube-dl.exe
 	- Integrated youtube-dl downloader
 	- Setting file name with GUID
 	- Taskbar progress
+	- Custom song naming 
+	- Link for youtube-dl in the version or settings view 
+	
+	
+## This is an updated version of [YoutubeVideoDownloader](https://github.com/BloddyRose/YouTubeVideoDownloader)
+##### Use thse link 
+	https://github.com/ytdl-org/youtube-dl/releases/download/2020.12.29/youtube-dl.exe
 
 #### Includes installer in Releases tab
 ### Donate
