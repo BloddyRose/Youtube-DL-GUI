@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.7" version="17.7" Modules="simple" RootPath="." Language="en" Id="{A669FF34-8730-47C1-A1EF-567D3B547294}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="Download free music from youtube with [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPNOREPAIR" Value="1"/>
+    <ROW Property="ARPURLINFOABOUT" Value="https://github.com/BloddyRose/Youtube-DL-GUI"/>
+    <ROW Property="CTRLS" Value="2"/>
+    <ROW Property="Manufacturer" Value="BloddyRose"/>
+    <ROW Property="ProductCode" Value="1033:{01A7E8D7-E482-4305-BDE0-21BE174FD9A8} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Youtube-Dl GUI"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{B0BA5980-3AC6-465F-AEDD-3F7011B6EBA0}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{C2CE7675-B92D-4F73-BDBD-118A9DB8EB6B}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="Microsoft.WindowsAPICodePack.Shell.dll" ComponentId="{A49459AC-B563-4040-9BB8-E26D8F0092BB}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.WindowsAPICodePack.Shell.dll"/>
+    <ROW Component="Microsoft.WindowsAPICodePack.Shell.xml" ComponentId="{05E2872E-ED57-4DD8-B815-83EA636AB13C}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.WindowsAPICodePack.Shell.xml" Type="0"/>
+    <ROW Component="Microsoft.WindowsAPICodePack.ShellExtensions.dll" ComponentId="{39B47E04-C230-40A0-8D53-EE53D6DEBD54}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.WindowsAPICodePack.ShellExtensions.dll"/>
+    <ROW Component="Microsoft.WindowsAPICodePack.dll" ComponentId="{46CF793D-68F2-47C8-899E-E61F6B270AB0}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.WindowsAPICodePack.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{4EBA03BC-ADFC-4053-A456-EE8DC152C350}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="System.Configuration.ConfigurationManager.dll" ComponentId="{FBB69050-AD84-4C8E-87DB-6FDCD43E7AE2}" Directory_="APPDIR" Attributes="0" KeyPath="System.Configuration.ConfigurationManager.dll"/>
+    <ROW Component="System.Security.AccessControl.dll" ComponentId="{57FA6F68-4458-4BF6-8B65-134BD6B4E3E4}" Directory_="APPDIR" Attributes="0" KeyPath="System.Security.AccessControl.dll"/>
+    <ROW Component="System.Security.Permissions.dll" ComponentId="{152F01DB-3811-4622-9278-1F0CBC8CBBA3}" Directory_="APPDIR" Attributes="0" KeyPath="System.Security.Permissions.dll"/>
+    <ROW Component="System.Security.Principal.Windows.dll" ComponentId="{72F6D3F8-C5F6-4F66-AD32-F16CB9878094}" Directory_="APPDIR" Attributes="0" KeyPath="System.Security.Principal.Windows.dll"/>
+    <ROW Component="WrapYoutubeDl.dll" ComponentId="{DFFA0814-7847-46E9-9887-F8102E0BF036}" Directory_="APPDIR" Attributes="0" KeyPath="WrapYoutubeDl.dll"/>
+    <ROW Component="YoutubeDLGUI.exe" ComponentId="{B41A8BB0-73E4-4C24-BC70-4B21EA10B519}" Directory_="APPDIR" Attributes="0" KeyPath="YoutubeDLGUI.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Microsoft.WindowsAPICodePack.dll" Component_="Microsoft.WindowsAPICodePack.dll" FileName="MICROS~1.DLL|Microsoft.WindowsAPICodePack.dll" Attributes="0" SourcePath="bin\Debug\Microsoft.WindowsAPICodePack.dll" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAPICodePack.pdb" Component_="Microsoft.WindowsAPICodePack.dll" FileName="MICROS~1.PDB|Microsoft.WindowsAPICodePack.pdb" Attributes="0" SourcePath="bin\Debug\Microsoft.WindowsAPICodePack.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAPICodePack.Shell.dll" Component_="Microsoft.WindowsAPICodePack.Shell.dll" FileName="MICROS~2.DLL|Microsoft.WindowsAPICodePack.Shell.dll" Attributes="0" SourcePath="bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAPICodePack.Shell.pdb" Component_="Microsoft.WindowsAPICodePack.Shell.dll" FileName="MICROS~2.PDB|Microsoft.WindowsAPICodePack.Shell.pdb" Attributes="0" SourcePath="bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAPICodePack.Shell.xml" Component_="Microsoft.WindowsAPICodePack.Shell.xml" FileName="MICROS~1.XML|Microsoft.WindowsAPICodePack.Shell.xml" Attributes="0" SourcePath="bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAPICodePack.ShellExtensions.dll" Component_="Microsoft.WindowsAPICodePack.ShellExtensions.dll" FileName="MICROS~3.DLL|Microsoft.WindowsAPICodePack.ShellExtensions.dll" Attributes="0" SourcePath="bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAPICodePack.ShellExtensions.pdb" Component_="Microsoft.WindowsAPICodePack.ShellExtensions.dll" FileName="MICROS~3.PDB|Microsoft.WindowsAPICodePack.ShellExtensions.pdb" Attributes="0" SourcePath="bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAPICodePack.ShellExtensions.xml" Component_="Microsoft.WindowsAPICodePack.Shell.xml" FileName="MICROS~2.XML|Microsoft.WindowsAPICodePack.ShellExtensions.xml" Attributes="0" SourcePath="bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAPICodePack.xml" Component_="Microsoft.WindowsAPICodePack.Shell.xml" FileName="MICROS~3.XML|Microsoft.WindowsAPICodePack.xml" Attributes="0" SourcePath="bin\Debug\Microsoft.WindowsAPICodePack.xml" SelfReg="false"/>
+    <ROW File="System.Configuration.ConfigurationManager.dll" Component_="System.Configuration.ConfigurationManager.dll" FileName="SYSTEM~1.DLL|System.Configuration.ConfigurationManager.dll" Attributes="0" SourcePath="bin\Debug\System.Configuration.ConfigurationManager.dll" SelfReg="false"/>
+    <ROW File="System.Configuration.ConfigurationManager.xml" Component_="Microsoft.WindowsAPICodePack.Shell.xml" FileName="SYSTEM~1.XML|System.Configuration.ConfigurationManager.xml" Attributes="0" SourcePath="bin\Debug\System.Configuration.ConfigurationManager.xml" SelfReg="false"/>
+    <ROW File="System.Security.AccessControl.dll" Component_="System.Security.AccessControl.dll" FileName="SYSTEM~2.DLL|System.Security.AccessControl.dll" Attributes="0" SourcePath="bin\Debug\System.Security.AccessControl.dll" SelfReg="false"/>
+    <ROW File="System.Security.AccessControl.xml" Component_="Microsoft.WindowsAPICodePack.Shell.xml" FileName="SYSTEM~2.XML|System.Security.AccessControl.xml" Attributes="0" SourcePath="bin\Debug\System.Security.AccessControl.xml" SelfReg="false"/>
+    <ROW File="System.Security.Permissions.dll" Component_="System.Security.Permissions.dll" FileName="SYSTEM~3.DLL|System.Security.Permissions.dll" Attributes="0" SourcePath="bin\Debug\System.Security.Permissions.dll" SelfReg="false"/>
+    <ROW File="System.Security.Permissions.xml" Component_="Microsoft.WindowsAPICodePack.Shell.xml" FileName="SYSTEM~3.XML|System.Security.Permissions.xml" Attributes="0" SourcePath="bin\Debug\System.Security.Permissions.xml" SelfReg="false"/>
+    <ROW File="System.Security.Principal.Windows.dll" Component_="System.Security.Principal.Windows.dll" FileName="SYSTEM~4.DLL|System.Security.Principal.Windows.dll" Attributes="0" SourcePath="bin\Debug\System.Security.Principal.Windows.dll" SelfReg="false"/>
+    <ROW File="System.Security.Principal.Windows.xml" Component_="Microsoft.WindowsAPICodePack.Shell.xml" FileName="SYSTEM~4.XML|System.Security.Principal.Windows.xml" Attributes="0" SourcePath="bin\Debug\System.Security.Principal.Windows.xml" SelfReg="false"/>
+    <ROW File="WrapYoutubeDl.dll" Component_="WrapYoutubeDl.dll" FileName="WRAPYO~1.DLL|WrapYoutubeDl.dll" Attributes="0" SourcePath="bin\Debug\WrapYoutubeDl.dll" SelfReg="false"/>
+    <ROW File="YoutubeDLGUI.exe" Component_="YoutubeDLGUI.exe" FileName="YOUTUB~1.EXE|Youtube-DL GUI.exe" Attributes="0" SourcePath="bin\Debug\Youtube-DL GUI.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="YoutubeDLGUI.exe.config" Component_="Microsoft.WindowsAPICodePack.Shell.xml" FileName="YOUTUB~1.CON|Youtube-DL GUI.exe.config" Attributes="0" SourcePath="bin\Debug\Youtube-DL GUI.exe.config" SelfReg="false"/>
+    <ROW File="YoutubeDLGUI.pdb" Component_="YoutubeDLGUI.exe" FileName="YOUTUB~1.PDB|Youtube-DL GUI.pdb" Attributes="0" SourcePath="bin\Debug\Youtube-DL GUI.pdb" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="bin\Builds" PackageFileName="Youtube-Dl Installer" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#YoutubeDLGUI.exe]"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.WindowsAPICodePack.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.WindowsAPICodePack.Shell.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.WindowsAPICodePack.Shell.xml"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.WindowsAPICodePack.ShellExtensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Configuration.ConfigurationManager.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.AccessControl.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Permissions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Principal.Windows.dll"/>
+    <ROW Feature_="MainFeature" Component_="WrapYoutubeDl.dll"/>
+    <ROW Feature_="MainFeature" Component_="YoutubeDLGUI.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="YoutubeDLGUI" Directory_="DesktopFolder" Name="YOUTUB~1|Youtube-DL GUI" Component_="YoutubeDLGUI.exe" Target="[#YoutubeDLGUI.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>

@@ -44,9 +44,10 @@ namespace Youtube_DL_GUI
             this.githublinkLbl = new System.Windows.Forms.LinkLabel();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtfilenameBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.settingsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // youtubedlBtn
@@ -167,6 +168,19 @@ namespace Youtube_DL_GUI
             this.githublinkLbl.Text = "Click here to get to github ";
             this.githublinkLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githublinkLbl_LinkClicked);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(398, 105);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(87, 17);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Guid-Naming";
+            this.toolTip1.SetToolTip(this.checkBox1, "If this is checked will generated an guid number for every file\r\nSomething like t" +
+        "his : f5e97257-a569-441c-b869-193e4be2eb06");
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // txtfilenameBox
             // 
             this.txtfilenameBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -184,25 +198,27 @@ namespace Youtube_DL_GUI
             this.label3.TabIndex = 11;
             this.label3.Text = "Name of your song ";
             // 
-            // checkBox1
+            // settingsBtn
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(398, 105);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(86, 17);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Guid-Naming";
-            this.toolTip1.SetToolTip(this.checkBox1, "If this is checked will generated an guid number for every file\r\nSomething like t" +
-        "his : f5e97257-a569-441c-b869-193e4be2eb06");
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.settingsBtn.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.settingsBtn.FlatAppearance.BorderSize = 0;
+            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsBtn.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.settingsBtn.Location = new System.Drawing.Point(156, 181);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Size = new System.Drawing.Size(75, 22);
+            this.settingsBtn.TabIndex = 13;
+            this.settingsBtn.Text = "Settings";
+            this.settingsBtn.UseVisualStyleBackColor = false;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(482, 211);
+            this.Controls.Add(this.settingsBtn);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtfilenameBox);
@@ -218,7 +234,7 @@ namespace Youtube_DL_GUI
             this.Controls.Add(this.youtubedlBtn);
             this.ForeColor = System.Drawing.SystemColors.Menu;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Youtube-DL GUI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -245,6 +261,7 @@ namespace Youtube_DL_GUI
         private System.Windows.Forms.TextBox txtfilenameBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button settingsBtn;
     }
 }
 

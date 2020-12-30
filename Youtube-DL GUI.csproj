@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Dakirby309-Simply-Styled-YouTube.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Dakirby309-Simply-Styled-YouTube.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -81,16 +81,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <Compile Include="Forms\SpashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SpashScreen.Designer.cs">
+      <DependentUpon>SpashScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,7 +115,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Forms\SpashScreen.resx">
+      <DependentUpon>SpashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,7 +136,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dakirby309-Simply-Styled-YouTube.ico" />
+    <Content Include="Resources\Dakirby309-Simply-Styled-YouTube.ico" />
+    <None Include="Resources\Dakirby309-Simply-Styled-YouTube-9.png" />
+    <None Include="Resources\Dakirby309-Simply-Styled-YouTube-8.png" />
+    <None Include="Resources\Dakirby309-Simply-Styled-YouTube-7.png" />
+    <None Include="Resources\Dakirby309-Simply-Styled-YouTube-6.png" />
+    <None Include="Resources\Dakirby309-Simply-Styled-YouTube-5.png" />
+    <None Include="Resources\Dakirby309-Simply-Styled-YouTube-4.png" />
+    <None Include="Resources\Dakirby309-Simply-Styled-YouTube-3.png" />
+    <None Include="Resources\Dakirby309-Simply-Styled-YouTube-2.png" />
+    <None Include="Resources\Dakirby309-Simply-Styled-YouTube-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,18 +1,18 @@
-﻿using System;
+﻿using Microsoft.WindowsAPICodePack.Taskbar;
+using System;
 using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using Youtube_DL_GUI.Forms;
 using WrapYoutubeDl;
-using Microsoft.WindowsAPICodePack.Taskbar;
-
 
 namespace Youtube_DL_GUI
 {
     public partial class MainForm : Form
     {
-        private readonly Uri youube_dl_url = new Uri("https://yt-dl.org/downloads/2020.11.29/youtube-dl.exe");
+        private static string youube_dl_url = "https://yt-dl.org/downloads/2020.11.29/youtube-dl.exe";
         private string folder;
         private string filename;
         // public static readonly TaskbarManager taskbar;
@@ -20,19 +20,17 @@ namespace Youtube_DL_GUI
         public MainForm()
         {
             InitializeComponent();
-            
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
-            { 
+            {
                 using (WebClient client = new WebClient())
                 {
                     client.DownloadProgressChanged += Client_DownloadProgressChanged;
                     client.DownloadFileCompleted += Client_DownloadFileCompleted;
-                    client.DownloadFileAsync(youube_dl_url, "youtube-dl.exe");
+                    client.DownloadFileAsync(new Uri(youube_dl_url), "youtube-dl.exe");
                 }
             }
             catch (Exception ex)
@@ -63,10 +61,25 @@ namespace Youtube_DL_GUI
             if (!File.Exists("youtube-dl.exe"))
             {
                 getlinkBtn.Enabled = false;
-
+                if (File.Exists("version"))
+                {
+                    using (StreamReader sr = new StreamReader("version"))
+                    {
+                        youube_dl_url = sr.ReadLine();
+                        sr.Close();
+                    }
+                }
+                else
+                {
+                    File.Create(Path.Combine(Application.StartupPath, "version"));
+                    using (StreamWriter sw = new StreamWriter("version"))
+                    {
+                        sw.WriteLine(youube_dl_url);
+                        sw.Close();
+                    }
+                }
             }
             string path = ConfigurationManager.AppSettings["binaryfolder"] = Application.StartupPath;
-
         }
 
         private void folderselBtn_Click(object sender, EventArgs e)
@@ -125,7 +138,6 @@ namespace Youtube_DL_GUI
                     TaskbarManager.Instance.SetProgressValue((int)e.Percentage, 100, Handle);
                 }
               ));
-
         }
 
         private void backgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -134,14 +146,12 @@ namespace Youtube_DL_GUI
             Invoke(new MethodInvoker(delegate
               {
                   txtfilenameBox.Text = downloader.OutputName;
-
               }
             ));
             downloader.ProgressDownload += Downloader_ProgressDownload;
             downloader.FinishedDownload += Downloader_FinishedDownload;
             downloader.ErrorDownload += Downloader_ErrorDownload;
             downloader.Download();
-
         }
 
         private void Downloader_ErrorDownload(object sender, ProgressEventArgs e)
@@ -159,6 +169,7 @@ namespace Youtube_DL_GUI
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Dispose();
+            Application.Exit();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -175,6 +186,12 @@ namespace Youtube_DL_GUI
                 txtfilenameBox.Clear();
                 filename = txtfilenameBox.Text + ".mp3";
             }
+        }
+
+        private void settingsBtn_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
         }
     }
 }
